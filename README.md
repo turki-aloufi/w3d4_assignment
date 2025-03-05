@@ -1,59 +1,63 @@
-# W3d4Assignment
+# User List App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+This is an Angular application that fetches user data from an API and displays their details along with their posts. The app includes proper error handling to ensure smooth performance even when API requests fail.
 
-## Development server
+## Features
+- Fetches users from `https://jsonplaceholder.typicode.com/users`.
+- Fetches user posts from `https://jsonplaceholder.typicode.com/posts?userId=`.
+- Displays user details including name, email, and address.
+- Displays user posts in a structured format.
+- Implements error handling to prevent crashes on API failures.
 
-To start a local development server, run:
+## Technologies Used
+- **Angular** (Standalone Components)
+- **RxJS** (Observables and Error Handling)
+- **Bootstrap** (Styling)
 
-```bash
-ng serve
+## Installation
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-repo/user-list-app.git
+   cd user-list-app
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Run the application:
+   ```sh
+   ng serve
+   ```
+4. Open your browser and navigate to:
+   ```
+   http://localhost:4200/
+   ```
+
+## Error Handling
+- If user data fetching fails, an error message is displayed instead of breaking the app.
+- If post data fetching fails, the app continues to display users without posts.
+- Logs errors to the console for debugging.
+
+## Project Structure
+```
+user-list-app/
+│── src/
+│   ├── app/
+│   │   ├── user.service.ts  # Handles API requests with error handling
+│   │   ├── user-list/
+│   │   │   ├── user-list.component.ts  # Main user listing logic
+│   │   │   ├── user-list.component.html  # UI Template
+│   │   │   ├── user-list.component.css  # Styling
+│── README.md
+│── angular.json
+│── package.json
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## License
+This project is licensed under the MIT License.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+**Author:** Turki Aloufi  
+For any issues or suggestions, feel free to create a pull request or open an issue!
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
